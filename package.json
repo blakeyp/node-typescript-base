@@ -1,0 +1,31 @@
+{
+  "name": "node-typescript-base",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean-build": "rimraf dist && tsc",
+    "build": "tsc --incremental",
+    "start": "node --enable-source-maps dist/index.js",
+    "watch": "nodemon --ext ts --exec 'npm run build && npm run debug'",
+    "debug": "node --enable-source-maps --inspect-brk dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.171",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
